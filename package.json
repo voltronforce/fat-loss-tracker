@@ -1,0 +1,52 @@
+{
+  "name": "fat-loss-tracker",
+  "version": "1.0.0",
+  "description": "Personal fat loss tracker — 85kg → 75kg by end of September 2026",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "package:win": "npm run build && electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.captain.fatloss",
+    "productName": "Fat Loss Tracker",
+    "copyright": "Captain 2026",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "!out/**/*.map"
+    ],
+    "extraResources": [
+      {
+        "from": "node_modules/sql.js/dist/sql-wasm.wasm",
+        "to": "sql-wasm.wasm"
+      }
+    ],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "dependencies": {
+    "sql.js": "^1.11.0",
+    "unzipper": "^0.12.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "electron": "^29.1.4",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.12.2",
+    "vite": "^5.1.6"
+  }
+}

@@ -1,0 +1,5 @@
+Place a 256x256 icon.ico file here for the Windows installer.
+
+If you skip this, electron-builder will use its default Electron icon.
+
+You can convert a PNG to ICO using: https://convertio.co/png-ico/

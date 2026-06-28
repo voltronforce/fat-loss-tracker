@@ -1,0 +1,9 @@
+node_modules/
+dist/
+out/
+export/
+*.zip
+*.xml
+*.log
+PUSH_TO_GITHUB.ps1
+PUSH_TO_GITHUB.bat
